@@ -64,6 +64,9 @@
 			});
 		});
 
+		var wrapperMargin = $('.banner').height();
+		$('.wrap').css("padding-top", wrapperMargin);
+
         //blur content
 
         function timeoutSingleToggle(classname, classtoadd, timeoutime) {
@@ -381,7 +384,12 @@
     // Home page
     'home': {
       init: function() {
-        // JavaScript to be fired on the home page
+		// JavaScript to be fired on the home page
+		
+		particlesJS.load('particles-js', '/wp-content/themes/carbonbased-new/dist/particlesjs-config.json', function() {
+			console.log('callback - particles.js config loaded');
+		});
+	
 
         //Waypoints for fade in elements
 
@@ -603,112 +611,106 @@
     'work': {
       init: function() {
 
-      		openingAnimation();
+	openingAnimation();
 
-			// Get Events - /wp-json/wp/v2/pages?parent=63
+	function shuffle(array) {
+	var currentIndex = array.length, temporaryValue, randomIndex;
 
-			var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50",
-			loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>',
-			loadSpinSelector = $('.load-spin');
+	while (0 !== currentIndex) {
 
-			var whyCreate = new Waypoint({
-				element: document.getElementById('portfolio-listing'),
-				handler: function(direction) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
 
-					//Parse portfolio elements
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
 
-					$.ajax( urlTarget, {
-					    type: 'GET',
-					    dataType: 'json',
-					    beforeSend: function() {
-					        $('.portfolio-list').append(loadSpinContainer).fadeIn('slow');
-					        $('.card').addClass('opaque-hide');
-					    },
-					    success: function( portfolio ) {
-					        
-					        $('.load-spin').fadeOut('fast');
+	return array;
+	}
 
-					        $.each( portfolio , function( index, portfolioListing ) {
 
-									portfolioBuild = '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">';
-									portfolioBuild += '<div class="card opaque-hide">';
-									portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
-								  	portfolioBuild += '<div class="card-block">';
-								    portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
-								  	portfolioBuild += '</div>';
-								  	portfolioBuild += '<div class="img-cover"></div>';
-								  	portfolioBuild += '<div class="img-blur" style="background-image:url(' + portfolioListing.better_featured_image.source_url + ')!important; background-size:cover!important; background-position:center center;"></div>';
-								  	portfolioBuild += '</a>';
-									portfolioBuild += '</div>';
-									portfolioBuild += '</div>';
+	// Get Events - /wp-json/wp/v2/pages?parent=63
 
-									$('.portfolio-list').append(portfolioBuild);
+	var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=20&order=asc",
+	loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>',
+	loadSpinSelector = $('.load-spin');
 
-									$('.card').each(function(i, obj) {
-										setTimeout( function() {
-											$('.card:eq('+ i +')').fadeIn('slow').addClass( 'animated fadeIn' );
-										}, i * 120);
-									});
-					        });
+		//Parse portfolio elements
 
-					        if ( $(window).width() > 640 ) {
+		$.ajax( urlTarget, {
+			type: 'GET',
+			dataType: 'json',
+			beforeSend: function() {
+				$('.portfolio-list').append(loadSpinContainer).fadeIn('slow');
+				$('.card').addClass('opaque-hide');
+			},
+			success: function( portfolio ) {
 
-					        	$('.card').on({ 
-								    mouseenter: function(){
-								        $(this).find('.card-block').addClass('active');
-								        $(this).find('.img-cover').addClass('gallery-pulse');
-								        $(this).find('.img-blur').addClass('blur');
-								    },
-								    mouseleave: function(){
-								        $(this).find('.card-block').removeClass('active');
-								        $(this).find('.img-cover').removeClass('gallery-pulse');
-								        $(this).find('.img-blur').removeClass('blur');
-								    },
-								    touchstart: function(){
-								        $(this).find('.card-block').addClass('active');
-								        $(this).find('.img-cover').addClass('gallery-pulse');
-								        $(this).find('.img-blur').addClass('blur');
-								    },
-								     touchend: function(){
-								        $(this).find('.card-block').removeClass('active');
-								        $(this).find('.img-cover').removeClass('gallery-pulse');
-								        $(this).find('.img-blur').removeClass('blur');
-								    }
+				var portShuffle = shuffle(portfolio);
+				
+				$('.load-spin').fadeOut('fast');
 
-								});
+				$.each( portShuffle , function( index, portfolioListing ) {
 
-								$('.card').tilt({
-								    scale: 1.05,
-								    reset: true,
-								    perspective: 1000,
-								    transition:  true
-								});
-							}
+						portfolioBuild = '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">';
+						portfolioBuild += '<div class="card opaque-hide">';
+						portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
+						portfolioBuild += '<div class="card-block">';
+						portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
+						portfolioBuild += '</div>';
+						portfolioBuild += '<div class="img-cover"></div>';
+						portfolioBuild += '<div class="img-blur" style="background-image:url(' + portfolioListing.better_featured_image.source_url + ')!important; background-size:cover!important; background-position:center center;"></div>';
+						portfolioBuild += '</a>';
+						portfolioBuild += '</div>';
+						portfolioBuild += '</div>';
 
-					    },
-					    error: function( req, status, err ) {
-					        console.log( 'something went wrong', status, err );
-					    }
+						$('.portfolio-list').append(portfolioBuild);
+
+						$('.card').each(function(i, obj) {
+							setTimeout( function() {
+								$('.card:eq('+ i +')').fadeIn('slow').addClass( 'animated fadeIn' );
+							}, i * 120);
+						});
+				});
+
+				if ( $(window).width() > 640 ) {
+
+					$('.card').on({ 
+						mouseenter: function(){
+							$(this).find('.card-block').addClass('active');
+							$(this).find('.img-cover').addClass('gallery-pulse');
+							$(this).find('.img-blur').addClass('blur');
+						},
+						mouseleave: function(){
+							$(this).find('.card-block').removeClass('active');
+							$(this).find('.img-cover').removeClass('gallery-pulse');
+							$(this).find('.img-blur').removeClass('blur');
+						},
+						touchstart: function(){
+							$(this).find('.card-block').addClass('active');
+							$(this).find('.img-cover').addClass('gallery-pulse');
+							$(this).find('.img-blur').addClass('blur');
+						},
+							touchend: function(){
+							$(this).find('.card-block').removeClass('active');
+							$(this).find('.img-cover').removeClass('gallery-pulse');
+							$(this).find('.img-blur').removeClass('blur');
+						}
+
 					});
 
-					this.destroy();
-				},
-				offset: 800
-			});
+				}
 
-      }
+			},
+			error: function( req, status, err ) {
+				console.log( 'something went wrong', status, err );
+			}
+		});
+
     },
     'blog': {
-      init: function() {
-	      	if ($(window).width() > 640) {
-		      	$('article').tilt({
-				    scale: 1.05,
-				    reset: true,
-				    perspective: 1000,
-				    transition:  true
-				});
-	      	}
-      }
+     
     },
   };
 

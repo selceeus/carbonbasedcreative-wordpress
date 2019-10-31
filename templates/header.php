@@ -10,22 +10,10 @@
 	<div class="nav-layout col-md-12 col-lg-8 mx-auto opaque-hide animated">
 		<div class="container">
 		  <div class="row">
-			<div class="col col-md-5 col-lg-5">
+			<div class="col text-center col-md-12 col-lg-12">
 				<?php
 					if ( has_nav_menu('primary_navigation') ) :
 						wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-					endif;
-				?>
-			</div>
-			<div class="col col-md-6 col-lg-4">
-				<?php 
-					if ( !empty( the_field( "menu_top_text_section", 'option' ) ) ):
-						the_field( "menu_top_text_section", 'option' );
-					endif;
-				?>
-				<?php 
-					if ( !empty( the_field( "menu_bottom_text_section", 'option' ) ) ):
-						the_field( "menu_bottom_text_section", 'option' );
 					endif;
 				?>
 			</div>

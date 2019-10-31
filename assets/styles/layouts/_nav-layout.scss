@@ -1,7 +1,7 @@
 //Navigation Overlay Layout
 
 .nav-layout {
-	margin-top:12%;
+	margin-top: 15vh;
 
 	@media (max-width:$medium) {
 		margin-top:29%;
@@ -9,32 +9,33 @@
 	
 	h4, h5 {
 		font-family:$headline;
-		color:#efecca;
+		color:#A4BA2B;
 	}
 	h4 {
-		font-size:1.2em;
-		font-weight:200;
+		font-size:1.1em;
+		font-weight:500!important;
 		padding-top:8px;
 	}
 	h5 {
-		font-size:1.35em;
+		font-size:1em;
 		font-weight:500;
+		color:#333333;
 		
 		a {
-			color:#efecca;
+			color:#333333;
 			text-decoration:none;
 		}
 	}
 	
 	p {
 		font-family: $bodycopy;
-		color:#fff;
+		color:#333333;
 		font-weight:300;
 		line-height: 1.75;
-    	font-size: .9em;
+    	font-size: .8em;
 		
 		a {
-			color:#fff;
+			color:#333333;
 			text-decoration:none;
 		}
 	}
@@ -50,10 +51,9 @@
 
 ul#menu-primary-navigation {
 	display: block;
-	text-align: right;
+	text-align: center;
 
 	@media (max-width:$xsmall) {
-		text-align: left;
 		margin-bottom: 20px;
 	}
 	
@@ -65,9 +65,9 @@ ul#menu-primary-navigation {
 	a {
 		transition: all .15s ease-in;
 		font-family:$headline;
-		font-weight:200;
-		font-size:1.8em;
-		color:#a4ba2b;
+		font-weight:700;
+		font-size:2.2em;
+		color:#000d1d;
 		text-decoration:none;
 		text-transform: uppercase;
 

@@ -9,9 +9,7 @@ use Roots\Sage\Wrapper;
 <html <?php language_attributes(); ?>">
   <?php get_template_part('templates/head'); ?>
   <body id="no-scroll" <?php body_class(); ?>>
-  <!--overlay-->
   <div class="loader-overlay">
-    
     <div class="loader-graphic loader-pulse">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.27 66.63">
         <defs>
@@ -23,24 +21,7 @@ use Roots\Sage\Wrapper;
         <path class="a" d="M59.74,53.74A30.34,30.34,0,0,0,34.93,5.94c-.49,0-1,0-1.45,0a3.78,3.78,0,0,0,.67-2.15A3.82,3.82,0,1,0,27.9,6.76a30.41,30.41,0,0,0-17.71,12A5.29,5.29,0,1,0,5.29,26a5.12,5.12,0,0,0,1.12-.13A30.35,30.35,0,0,0,54.73,59.27a3.81,3.81,0,1,0,5-5.53Zm-4.59-3.83A24.56,24.56,0,0,1,34.83,60.73c-.7,0-1.4,0-2.1-.1a2,2,0,0,1,.36.62,2,2,0,1,1-3-1,24.79,24.79,0,0,1-8.93-3.7A24.53,24.53,0,0,1,10.31,36.21c0-.47,0-.93,0-1.4a2.52,2.52,0,1,1,.25-2.38A24.5,24.5,0,0,1,34.82,11.69c.78,0,1.55.05,2.32.12a2.58,2.58,0,0,1-.84-1.15,2.56,2.56,0,1,1,3.32,1.52,24.62,24.62,0,0,1,8.91,3.7,24.33,24.33,0,0,1,9.16,11.49h0a24.49,24.49,0,0,1,1.66,8.83c0,.5,0,1-.06,1.47a2.46,2.46,0,0,1,.65-.32,2.34,2.34,0,1,1-1.1,3.75A24.56,24.56,0,0,1,55.15,49.91Z"/>
       </svg>
     </div>
-
   </div>
-   <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="exampleModalLabel">Get in touch!</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-            <?php echo do_shortcode( ' [gravityform id="1" title="false" description="false" ajax="true"] ' ); ?>
-            </div>
-          </div>
-        </div>
-      </div>
     <!--[if IE]>
       <div class="alert alert-warning">
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
