@@ -1,0 +1,68 @@
+.btn {
+	text-transform:uppercase!important;
+	text-align: center;
+	-webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	-moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	
+	&-lrg {
+		transition: all .15s ease-in!important;
+		font-family:$headline;
+		font-size:1.25em;
+		color:#093542!important;
+		font-weight: 600!important;
+
+		&:hover {
+			opacity:.7
+		}
+	}
+	
+	&-primary {
+		background-color:#a4ba2b!important;
+		padding:22px 27px 20px 27px!important;
+		border-radius: 2px!important;
+	}
+}
+#footer-cta {
+	.btn {
+		&-lrg {
+			float:right;
+
+			@media (max-width:$medium) {
+				float:left;
+			}	
+		}
+	}
+}
+.modal .gform_wrapper .gform_footer input.button, 
+.modal .gform_wrapper .gform_footer input[type=submit], 
+.modal .gform_wrapper .gform_page_footer input.button, 
+.modal .gform_wrapper .gform_page_footer input[type=submit] {
+    font-family:$headline;
+    font-size: 1.25em!important;
+    margin: 5px 0 5px;
+}
+.gform_wrapper .gform_footer input.button, 
+.gform_wrapper .gform_footer input[type=submit], 
+.gform_wrapper .gform_page_footer input.button, 
+.gform_wrapper .gform_page_footer input[type=submit] {
+    font-family:$headline;
+    font-size: 1.25em!important;
+    margin: 20px 0 16px;
+    background-color:#a4ba2b!important;
+	padding: 15px 25px 15px!important;
+    color:#093542!important;
+	font-weight: 600!important;
+    text-transform: uppercase;
+    text-align: center!important;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	-moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	transition: all .15s ease-in!important;
+	cursor:pointer;
+	border-radius: 2px!important;
+	border: none;
+		&:hover {
+			opacity:.7
+		}
+   }

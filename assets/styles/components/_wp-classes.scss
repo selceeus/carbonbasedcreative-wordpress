@@ -1,0 +1,80 @@
+// WordPress Generated Classes
+// http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+// Media alignment
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto;
+}
+.aligncenter {
+  display: block;
+  margin: ($spacer / 2) auto;
+  height: auto;
+}
+.alignleft,
+.alignright {
+  margin-bottom: ($spacer / 2);
+  height: auto;
+}
+@include media-breakpoint-up(sm) {
+  // Only float if not on an extra small device
+  .alignleft {
+    float: left;
+    margin-right: ($spacer / 2);
+  }
+  .alignright {
+    float: right;
+    margin-left: ($spacer / 2);
+  }
+}
+
+// Captions
+.wp-caption {
+  @extend .figure-img;
+  @extend .img-fluid;
+}
+.wp-caption-text {
+  @extend .figure-caption;
+}
+
+// Text meant only for screen readers
+.screen-reader-text {
+  @extend .sr-only;
+  @extend .sr-only-focusable;
+}
+
+//Blog Styles
+
+.single hr {
+  border-top: 8px solid rgba(214,212,183,0.2)!important;
+  padding:1.5% 0!important;
+}
+
+h1.entry-title {
+  font-weight:500!important;
+}
+
+.widget h3 {
+  font-weight:500!important;
+
+  &:after {
+    content: "";
+      display: block;
+      width: 75px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      height: 8px;
+      background: #a4ba2b;
+      text-align:center;
+  }
+}
+section.widget {
+    padding-top: 2.5%!important;
+}
+h1#comments {
+    font-size: 2.3em;
+    font-weight: 400!important;
+    color:#009ba5;
+}

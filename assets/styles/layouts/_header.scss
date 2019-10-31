@@ -1,0 +1,155 @@
+
+//Header
+
+header {
+	position:fixed;
+	width:100%;
+	height:110px;
+	z-index:50;
+	padding-top:2%;
+	padding-left:4%;
+	padding-right:4%;
+
+	@media (max-width:$medium) {
+		padding-top:2.5%;
+		padding-left:6%;
+		padding-right:6%;
+	}
+	@media (max-width:$medium) {
+		height:90px;
+	}
+	@media (max-width:$xsmall) {
+		padding-top: 5%;
+	}
+	
+	.brand {
+		transition: opacity, .25s, ease-in;
+	    width: 240px;
+    	display: block;
+    	float: left;
+
+    	@media (max-width:$xsmall) {
+			width: 145px;
+    		padding-top: 7px;
+		}
+		
+		&:hover {
+			opacity:.7;	
+		}
+	}
+	
+	&.banner {
+		transition: background .5s ease-in;
+		background:rgb(255,255,255);
+		&.active {
+			background:rgba(255,255,255,.95);
+		}
+	}
+
+	.site-menu {
+		margin: 9px auto;
+		width: 115px;
+		height: $bar-height + $bar-spacing*2;
+		cursor: pointer;
+		float:right;
+
+		@media (max-width:$xsmall) {
+			margin-top: 4px;
+		}
+		
+		.menu-label {
+			font-family:$headline;
+			color:$highlight;
+			font-weight:300;
+			padding-top: 5px;
+    		display: inline-block;
+
+    		@media (max-width:$xsmall) {
+				padding-left: 15px;
+			}
+			
+			&:before {
+				content:"Menu";
+			}
+			
+			&.active {
+				&:before {
+					content:"Close";
+				}
+			}
+			
+		}
+	}
+}
+
+//Menu animation
+
+.bar,
+.bar:after,
+.bar:before {
+  	width: $bar-width;
+	height: $bar-height;
+	border-radius: 3px;
+}
+
+.bar {
+	position: relative;
+	transform: translateY($bar-spacing);
+	background: $bar-color-opaque;
+	transition: all 0ms 300ms;
+	float: right;
+
+	&.active {
+		background: rgba(239, 236, 202, 0); 
+	}
+}
+
+.bar:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: $bar-spacing;
+	background: $bar-color-opaque;
+	transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: $bar-spacing;
+	background: $bar-color-opaque;
+	transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.active:after {
+	top: 0;
+	transform: rotate(45deg);
+	transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+
+.bar.active:before {
+	bottom: 0;
+	transform: rotate(-45deg);
+	transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+
+//Navigation Overlay
+
+.nav-primary {
+	transition: background-color, .5s, ease-in;
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	z-index: 49;
+
+	@media (max-width:$medium) {
+		//padding-left:0;
+	}
+	
+	&.active {
+		display:block;
+		background-color: rgba($brand-primary, .9);
+		top:0;
+	}	
+}

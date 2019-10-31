@@ -1,0 +1,86 @@
+//Navigation Overlay Layout
+
+.nav-layout {
+	margin-top:12%;
+
+	@media (max-width:$medium) {
+		margin-top:29%;
+	}
+	
+	h4, h5 {
+		font-family:$headline;
+		color:#efecca;
+	}
+	h4 {
+		font-size:1.2em;
+		font-weight:200;
+		padding-top:8px;
+	}
+	h5 {
+		font-size:1.35em;
+		font-weight:500;
+		
+		a {
+			color:#efecca;
+			text-decoration:none;
+		}
+	}
+	
+	p {
+		font-family: $bodycopy;
+		color:#fff;
+		font-weight:300;
+		line-height: 1.75;
+    	font-size: .9em;
+		
+		a {
+			color:#fff;
+			text-decoration:none;
+		}
+	}
+	.nav-footer {
+    	padding-top: 4.5%;
+	}
+	.pt-5 {
+		@media (max-width:$xsmall) {
+			padding-top:1em!important;
+		}
+	}
+}
+
+ul#menu-primary-navigation {
+	display: block;
+	text-align: right;
+
+	@media (max-width:$xsmall) {
+		text-align: left;
+		margin-bottom: 20px;
+	}
+	
+	li {
+		@media (max-width:$xsmall) {
+			line-height: 1.5;
+		}
+	}
+	a {
+		transition: all .15s ease-in;
+		font-family:$headline;
+		font-weight:200;
+		font-size:1.8em;
+		color:#a4ba2b;
+		text-decoration:none;
+		text-transform: uppercase;
+
+		@media (max-width:$medium) {
+			font-size:1.65em;
+		}
+		@media (max-width:$xsmall) {
+			font-size:2.2em;
+		}
+		
+		&:hover {
+			opacity:.5;
+		}
+		
+	}
+}
