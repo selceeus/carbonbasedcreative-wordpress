@@ -41,6 +41,11 @@
 	-ms-animation: pulse 2.5s infinite;
 	-webkit-animation: pulse 2.5s infinite;
 }
+.loader-pulse {
+	animation: heartpulse 2.5s infinite;
+	-ms-animation: heartpulse 2.5s infinite;
+	-webkit-animation: heartpulse 2.5s infinite;
+}
 .glitter {
 	animation: pulse 1s infinite;
 	-ms-animation: pulse 1s infinite;
@@ -53,6 +58,41 @@
 	animation-direction: alternate;
 	-ms-animation-animation-direction: alternate;
 	-webkit-animation-direction: alternate;
+}
+.rotate {
+	animation: rotation 6s infinite linear;
+}
+@-moz-keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+@-webkit-keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+@-ms-keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
 }
 
 //Homepage Lead Text Fade
@@ -100,22 +140,22 @@
 
 @-moz-keyframes heartpulse {
   0% {transform: scale(1, 1); opacity: 1; }
-  50% { transform: scale(.95, .95); opacity: .5; }
+  50% { transform: scale(.85, .85); opacity: .3; }
   100% { transform: scale(1, 1); opacity: 1; }
 }
 @-webkit-keyframes heartpulse {
   0% {transform: scale(1, 1); opacity: 1; }
-  50% { transform: scale(.95, .95); opacity: .5; }
+  50% { transform: scale(.85, .85); opacity: .3; }
   100% { transform: scale(1, 1); opacity: 1; }
 }
 @-ms-keyframes heartpulse {
   0% { transform: scale(1, 1); opacity: 1; }
-  50% { transform: scale(.95, .95); opacity: .5; }
+  50% { transform: scale(.85, .85); opacity: .3; }
   100% { transform: scale(1, 1); opacity: 1; }
 }
 @keyframes heartpulse {
   0% { transform: scale(1, 1); opacity: 1; }
-  50% { transform: scale(.95, .95); opacity: .5; }
+  50% { transform: scale(.85, .85); opacity: .3; }
   100% { transform: scale(1, 1); opacity: 1; }
 }
 
@@ -149,24 +189,24 @@
 //pulse
 
 @-moz-keyframes pulse {
-  0% {opacity: 1;}
-  50% {opacity: .5;}
-  100% {opacity: 1;}
+  0% {opacity: .5;}
+  50% {opacity: .25;}
+  100% {opacity: .5;}
 }
 @-webkit-keyframes pulse {
-  0% {opacity: 1;}
-  50% {opacity: .5;}
-  100% {opacity: 1;}
+	0% {opacity: .5;}
+	50% {opacity: .25;}
+	100% {opacity: .5;}
 }
 @-ms-keyframes pulse {
-  0% {opacity: 1;}
-  50% {opacity: .5;}
-  100% {opacity: 1;}
+	0% {opacity: .5;}
+	50% {opacity: .25;}
+	100% {opacity: .5;}
 }
 @keyframes pulse {
-  0% {opacity: 1;}
-  50% {opacity: .5;}
-  100% {opacity: 1;}
+	0% {opacity: .5;}
+	50% {opacity: .25;}
+	100% {opacity: .5;}
 }
 
 //Portfolio thumbnail fade

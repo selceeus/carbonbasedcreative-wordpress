@@ -142,14 +142,14 @@
 				
 				//Nav overlay
 				
-				if ( navPrimary.hasClass('active') ) {
+				if (navPrimary.hasClass('active')) {
 					navPrimary.removeClass('active fadeInDownBig');
 					navPrimary.addClass('animated fadeOutUpBig');
 					
 					//Check scroll height and Add header background
 					
 					if ($(document).scrollTop() >= 50) {
-						headerBkg.addClass('active');
+						headerBkg.addClass('active').removeClass('disable');
 					}
 					else {
 						headerBkg.removeClass('active');
@@ -165,7 +165,7 @@
 
 
 					//Remove header background
-					headerBkg.removeClass('active');
+					headerBkg.addClass('disable');
 				}
 				
 				//Nav Layout Content
@@ -530,11 +530,11 @@
       }
     },
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'about': {
       init: function() {
         // JavaScript to be fired on the about us page
 
-	        openingAnimation();
+	        //openingAnimation();
 
 			instafetch.init({
 				accessToken: '306192029.1677ed0.d982023a5c524df68a810a265fe0f749',
@@ -545,7 +545,7 @@
 
       }
     },
-    'our_solutions': {
+    'solutions': {
       init: function() {
 
       	openingAnimation();
@@ -601,7 +601,7 @@
    
 	  }
     },
-    'our_work': {
+    'work': {
       init: function() {
 
       		openingAnimation();

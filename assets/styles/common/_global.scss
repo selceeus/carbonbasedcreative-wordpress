@@ -27,7 +27,7 @@ body {
 }
 .loader-overlay {
 	position: fixed;
-    background: $green;
+    background: $dark-hightlight;
     //background-image: url(/carbonbased-live/wp-content/uploads/2017/05/cbc-header-bkg-2.png);
     //background-size:cover;
     z-index: 999999;
@@ -35,8 +35,8 @@ body {
     height: 100%;
 
     .loader-graphic {
-		width: 15%;
-		margin: 20% auto;
+		width: 10vw;
+   		margin: 37vh auto;
 
 		@media (max-width:$large) {
 			width: 15%;

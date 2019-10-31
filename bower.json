@@ -11,7 +11,9 @@
     "font-awesome": "fontawesome#^4.7.0",
     "animate.css": "3.5.2",
     "hover": "^2.1.1",
-    "instafetch.js": "1.2.2"
+    "instafetch.js": "1.2.2",
+    "bower-webfontloader": "^1.6.6",
+    "rellax": "*"
   },
   "overrides": {
     "font-awesome": {
@@ -20,5 +22,6 @@
         "./fonts/*"
       ]
     }
-  }
+  },
+  "devDependencies": {}
 }
