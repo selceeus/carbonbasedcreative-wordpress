@@ -152,7 +152,7 @@
 						headerBkg.addClass('active').removeClass('disable');
 					}
 					else {
-						headerBkg.removeClass('active');
+						headerBkg.removeClass('active').removeClass('disable');
 					}
 					
 				}
@@ -162,7 +162,6 @@
 
 					//Add Cool Overlay
 					//console.log('hello');
-
 
 					//Remove header background
 					headerBkg.addClass('disable');
