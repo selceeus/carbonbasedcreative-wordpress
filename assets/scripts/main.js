@@ -377,8 +377,8 @@
 
             $.each( portShuffle , function( index, portfolioListing ) {
 
-                portfolioBuild = '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">';
-                portfolioBuild += '<div class="card opaque-hide" style="border-radius:50%; width:20vw; height:20vw;">';
+                portfolioBuild = '<div class="portfolio-item">';
+                portfolioBuild += '<div class="card opaque-hide">';
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                 portfolioBuild += '<div class="card-block">';
                 portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
