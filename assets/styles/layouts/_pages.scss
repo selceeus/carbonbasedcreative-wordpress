@@ -81,6 +81,27 @@
 			column-count: 2!important;
 		}
 	}
+
+	article {
+		//padding-bottom:20px;
+	}
+
+	a {
+		color:#009ba5!important;
+	}
+
+	p {
+		line-height: 1.4!important;
+	}
+	
+	figure {
+		transition: all .25s ease-in;
+		
+		&:hover {
+			opacity:.7;
+			transform: scale(1.1);
+		}
+	}
 }
 
 //Our Solutions

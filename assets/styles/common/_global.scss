@@ -60,7 +60,7 @@ body {
 // Scrollbar
 
 ::-webkit-scrollbar-track-piece{
-	background-color:#efecca;
+	background-color:#ffffff;
 	-webkit-border-radius:0;
 }
 ::-webkit-scrollbar{
@@ -68,7 +68,7 @@ body {
 }
 ::-webkit-scrollbar-thumb{
 	height:50px;
-	background-color:#a4ba2b;
+	background-color:$brand-primary;
 	-webkit-border-radius:2px;
 	outline:2px solid #fff;
 	outline-offset:-2px;
@@ -474,23 +474,3 @@ span.name_first {
 .et_divi_builder #et_builder_outer_content .et_pb_title_container {
     z-index: 40;
 }
-#instagram-list {
-	article {
-		//padding-bottom:20px;
-	}
-	a {
-		color:#009ba5!important;
-	}
-	p {
-		line-height: 1.4!important;
-	}
-	figure {
-		transition: opacity .25s ease-in;
-		
-		&:hover {
-			opacity:.7;
-		}
-	}
-}
-
-

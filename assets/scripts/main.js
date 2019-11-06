@@ -268,9 +268,9 @@
     'home': {
       init: function() {
         
-        particlesJS.load('particles-js', '/wp-content/themes/carbonbased-new/dist/particlesjs-config.json', function() {
+        /*particlesJS.load('particles-js', '/wp-content/themes/carbonbased-new/dist/particlesjs-config.json', function() {
           console.log('callback - particles.js config loaded');
-        });
+        });*/
 
         // Lead Text 
         var leadText = $('.home-lead-text'),
