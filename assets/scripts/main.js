@@ -267,10 +267,6 @@
     // Home page
     'home': {
       init: function() {
-        
-        /*particlesJS.load('particles-js', '/wp-content/themes/carbonbased-new/dist/particlesjs-config.json', function() {
-          console.log('callback - particles.js config loaded');
-        });*/
 
         // Lead Text 
         var leadText = $('.home-lead-text'),
@@ -309,6 +305,17 @@
           });
         }
 
+        if ( $(window).width() > 640 ) {
+          var rellax = new Rellax('.rellax', {
+            speed: -1,
+            center: false,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+          });
+        }
+
       },
       finalize: function() {
         
@@ -319,8 +326,17 @@
     'about': {
       init: function() {
 
-        console.log('hello about us');
-   
+        if ( $(window).width() > 640 ) {
+          var rellax = new Rellax('.rellax', {
+            speed: -1,
+            center: false,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+          });
+        }
+
         instafetch.init({
           accessToken: '306192029.1677ed0.d982023a5c524df68a810a265fe0f749',
           target: 'instagram-list',
@@ -336,7 +352,16 @@
     },
     'solutions': {
       init: function() {
-
+        if ( $(window).width() > 640 ) {
+          var rellax = new Rellax('.rellax', {
+            speed: -1,
+            center: false,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+          });
+        }
 	    }
     },
     'work': {
@@ -357,13 +382,17 @@
             return array;
         }
 
+        //Get Random Int
+        function getRandomInt(max) {
+          return Math.floor(Math.random() * Math.floor(max));
+        }
+
         // Get Events - /wp-json/wp/v2/pages?parent=63
 		    var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=20&order=asc",
 		    loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>',
         loadSpinSelector = $('.load-spin');
         
         //Parse portfolio elements
-
         $.ajax( urlTarget, {
           type: 'GET',
           dataType: 'json',
@@ -378,12 +407,17 @@
             $.each( portShuffle , function( index, portfolioListing ) {
 
                 portfolioBuild = '<div class="portfolio-item">';
-                portfolioBuild += '<div class="card opaque-hide">';
+
+                if( index % getRandomInt(4) ) {
+                  portfolioBuild += '<div class="card opaque-hide rellax" >';
+                } else {
+                  portfolioBuild += '<div class="card opaque-hide" >';
+                }
+
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                 portfolioBuild += '<div class="card-block">';
                 portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
                 portfolioBuild += '</div>';
-                //portfolioBuild += '<div class="img-cover"></div>';
                 portfolioBuild += '<div class="img-blur" style="border-radius:50%; background-image:url(' + portfolioListing.better_featured_image.source_url + ')!important; background-size:cover!important; background-position:center center;"></div>';
                 portfolioBuild += '</a>';
                 portfolioBuild += '</div>';
@@ -427,6 +461,19 @@
             console.log( 'something went wrong', status, err );
           }
         });
+
+        if ( $(window).width() > 640 ) {
+          $( document ).ajaxComplete(function( event, request, settings ) {
+            var rellax = new Rellax('.rellax', {
+              speed: 1,
+              center: false,
+              wrapper: null,
+              round: true,
+              vertical: true,
+              horizontal: false
+            });
+          });
+        }
 
 	    }
     }

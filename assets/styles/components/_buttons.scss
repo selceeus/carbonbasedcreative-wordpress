@@ -4,21 +4,23 @@
 	-webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
 	-moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
 	box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)!important;
+	border: none;
 	
 	&-lrg {
 		transition: all .15s ease-in!important;
 		font-family:$headline;
-		font-size:1.25em;
-		color:#093542!important;
-		font-weight: 600!important;
+		font-size:1.15em;
+		color:#fff!important;
+		font-weight: 500!important;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			opacity:.7
 		}
 	}
 	
 	&-primary {
-		background-color:#a4ba2b!important;
+		background-color:$dark-hightlight!important;
 		padding:22px 27px 20px 27px!important;
 		border-radius: 2px!important;
 	}
@@ -62,7 +64,8 @@
 	cursor:pointer;
 	border-radius: 2px!important;
 	border: none;
-		&:hover {
+		&:hover,
+		&:focus {
 			opacity:.7
 		}
    }

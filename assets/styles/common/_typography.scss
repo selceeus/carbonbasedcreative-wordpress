@@ -102,11 +102,17 @@ h5 {
 
 h2.entry-title,
 h2.entry-title a {
+	color:$dark-hightlight;
+	transition: all .25s ease-in;
 	text-align: left!important;
     padding-bottom: 20px!important;
     padding-top: 10px!important;
-    font-weight: 300!important;
-    line-height: 1.13!important;
+    font-weight: 500!important;
+	line-height: 1.13!important;
+	
+	&:hover {
+		opacity: 0.8;
+	}
 
 }
 h2.entry-title {

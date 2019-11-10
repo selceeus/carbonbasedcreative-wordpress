@@ -1,0 +1,36 @@
+.blog article {
+    transition: all .15s ease-in;
+    border-radius: 2px!important;
+    border:1px solid #ececec!important;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.02);
+    }
+}
+
+.et-db #et-boc .et-l .et_pb_blog_grid a.more-link, 
+.et-db #et-boc .et-l .et_pb_posts a.more-link {
+    transition: all .15s ease-in!important;
+    padding: 15px!important;
+    color:  #fff!important;
+    text-transform: uppercase;
+    background-color:$dark-hightlight!important;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 2px;
+}
+
+.et-db #et-boc .et-l .et_pb_image_container {
+    margin-bottom:-29px;
+}
+
+.entry-featured-image-url {
+    transition: all .25s ease-in;
+
+    &:hover,
+    &:focus {
+        opacity: 0.8;
+    }
+
+}
