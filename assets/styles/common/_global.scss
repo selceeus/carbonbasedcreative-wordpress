@@ -22,7 +22,7 @@ body {
 		//font-size:.725em;
 	}
 	&.error404 {
-		background:$brand-primary!important;
+		background:$dark-hightlight!important;
 	}
 }
 .loader-overlay {
@@ -49,18 +49,18 @@ body {
     	}
 
 		@media (max-width:$small) {
-			width: 53%;
-    		margin: 65% 28%;
+			width: 50%;
+    		margin: 32% 25%;
     	}
     }
 }
 #no-scroll {
 	overflow-y: hidden;
 }
-// Scrollbar
 
+// Scrollbar
 ::-webkit-scrollbar-track-piece{
-	background-color:#ffffff;
+	background-color:#ececec;
 	-webkit-border-radius:0;
 }
 ::-webkit-scrollbar{
@@ -68,7 +68,7 @@ body {
 }
 ::-webkit-scrollbar-thumb{
 	height:50px;
-	background-color:$brand-primary;
+	background-color:$dark-hightlight;
 	-webkit-border-radius:2px;
 	outline:2px solid #fff;
 	outline-offset:-2px;
@@ -76,7 +76,7 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover{
 	height:50px;
-	background-color:$brand-primary;
+	background-color:$dark-hightlight;
 	-webkit-border-radius:2px;
 }
 
@@ -109,7 +109,6 @@ body {
 }
 
 //Bootstrap Options
-
 .main {
 	padding:0!important;
 }
@@ -174,21 +173,24 @@ body {
 //Utility Classes
 
 .absolute-center {
-	//margin: auto!important;
-	position: absolute;
-	top: 260px; left: 5%; bottom: 0; right: 0;
-	width: 80%; 
-	height: 40%;
-	min-width: 310px;
-	max-width: 630px;
-	padding: 20px;
-	z-index:5000;
+	/*position: absolute;*/
+	margin-top: 10vw;
+	margin-left: 7vw;
+    /*left: 0%;*/
+    /* bottom: 0; */
+    /* right: 0; */
+    /* width: 80%; */
+    /* height: 40%; */
+    /* min-width: 310px; */
+    max-width: 630px;
+    /* padding: 20px; */
+    /* z-index: 5000; */
 
 	@media (max-width:$medium) {
-		top: 210px;
+
 	}
 	@media (max-width:320px) {
-		top: 155px;
+
 	}
 }
 .absolute-center-vertical {
@@ -232,13 +234,14 @@ body {
 .et_divi_builder #et_builder_outer_content .et_pb_module input select,
 textarea#input_1_3,
  {
-    border: 2px solid rgba(214,212,183,0.85)!important;
-    background: rgba(247, 246, 233, .8);
+    border: 2px solid rgba(0,0,0,0.25)!important;
+    background: #fff;
     font-size: .95em;
     color: #4e4e4e!important;
     padding: 5px 10px!important;
     height: auto!important;
-    width: 100%!important;
+	width: 100%!important;
+	border-radius:2px;
 }
 .gform_wrapper form li, 
 .gform_wrapper li {
@@ -267,7 +270,20 @@ html div.ginput_complex.ginput_container.gf_name_has_5 span:first-child {
 .et_divi_builder #et_builder_outer_content .et_pb_text ol {
     padding-bottom: 0;
 }
-
+span#input_1_4_6_container {
+	padding-right: 0;
+}
+body .gform_wrapper ul li.gfield,
+.gform_footer.top_label,
+body .gform_wrapper ul li.field_description_below div.ginput_container_checkbox, 
+body .gform_wrapper ul li.field_description_below div.ginput_container_radio {
+	margin-top: 0;
+	padding-top:0;
+}
+.et-db #et-boc .et-l .et_pb_text ul {
+    margin: 0;
+    padding: 0;
+}
 .email-checkbox {
 	height: 80px;
 
@@ -414,7 +430,7 @@ span.name_first {
 	animation: fade 12.5s linear infinite 0s;
 	-ms-animation: fade 12.5s linear infinite 0s;
 	-webkit-animation: fade 12.5s linear infinite 0s;
-	color: #00abe9;
+	color: $dark-hightlight;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -450,7 +466,8 @@ span.name_first {
 .et_divi_builder #et_builder_outer_content .et_pb_blog_grid .et_pb_post {
     padding: 40px !important;
     }
-.et_divi_builder #et_builder_outer_content .et_pb_blog_grid a.more-link, .et_divi_builder #et_builder_outer_content .et_pb_posts a.more-link {
+.et_divi_builder #et_builder_outer_content .et_pb_blog_grid a.more-link, 
+.et_divi_builder #et_builder_outer_content .et_pb_posts a.more-link {
 	transition: all .15s ease-in!important;
 	font-family:$headline;
 	padding: 15px!important;
@@ -461,7 +478,8 @@ span.name_first {
     margin-top: 20px;
     border-radius: 2px;
 
-    &:hover {
+    &:hover,
+	&:focus {
 		opacity:.7
 	}
 }

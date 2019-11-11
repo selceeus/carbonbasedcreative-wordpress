@@ -53,11 +53,10 @@
 }
 
 h1.entry-title {
-  font-weight:500!important;
+  color:$dark-hightlight!important;
 }
 
 .widget h3 {
-  font-weight:500!important;
 
   &:after {
     content: "";

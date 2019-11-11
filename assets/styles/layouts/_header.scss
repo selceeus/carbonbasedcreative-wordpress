@@ -27,15 +27,13 @@ header {
 			width: 30vw;
 		}
 
-    	@media (max-width:$small) {
-			width: 50vw;
+		@media (max-width:$xsmall ) {
+			width: 40vw;
+			padding: 1.8vw 1vw .75vw;
 		}
 
-		@media (max-width:$xsmall) {
-			width: 50vw;
-		}
-		
-		&:hover {
+		&:hover,
+		&:focus {
 			opacity:.7;	
 		}
 	}
@@ -57,10 +55,14 @@ header {
 	.site-menu {
 		width: 100px;
 		cursor: pointer;
-		padding: 2.2vw 1vw 0 0;
+		padding: 2.3vw 1vw 0 0;
 
+		@media (max-width:$medium) {
+			padding: 3.3vw 1vw 0 0;
+		}
 		@media (max-width:$xsmall) {
-			margin-top: 4px;
+			width: 120px;
+			padding: 2.5vw 4vw 0 0;
 		}
 		
 		.menu-label {

@@ -34,3 +34,129 @@
     }
 
 }
+
+//Blog Styles
+h2.entry-title,
+h2.entry-title a {
+	color:$dark-hightlight;
+	transition: all .25s ease-in;
+	text-align: left!important;
+    padding-bottom: 20px!important;
+    padding-top: 10px!important;
+    font-weight: 500!important;
+	line-height: 1.13!important;
+	
+	&:hover {
+		opacity: 0.8;
+	}
+
+}
+h2.entry-title {
+	&:after {
+		content: "";
+	    display: block;
+	    width: 75px;
+	    margin-top: 15px;
+	    margin-bottom: 5px;
+	    height: 8px;
+	    background: #a4ba2b;
+	    text-align:center;
+	}
+}
+.single .container-fluid {
+    padding: 2vw 5vw;
+}
+.single h2 {
+    padding: 2vw 0 1.3vw;
+}
+.single article.post img {
+    max-width: 100%;
+    height: auto;
+}
+.post p a {
+    transition: opacity .15s ease-in!important;
+    color: #a4ba2b!important;
+    font-weight: 600;
+    border-bottom: 1px #a4ba2b solid;
+    padding-bottom: 3px;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+.single .col-md-9 {
+    padding-right: 30px;
+    padding-left: 0;
+}
+.single section.widget {
+    padding: 2vw 0 4vw;
+}
+.single .widget h3 {
+    font-weight: 700;
+    font-size: 32px;
+    color: $dark-hightlight!important;
+    line-height: 1.2em;
+    padding-bottom: 1.2vw;
+}
+.single .widget select {
+    font-family: $bodycopy;
+    width: 100%;
+    padding: 3px 5px 1px 10px;
+    font-size: 14px;
+    color: $dark-hightlight;
+    border: 1px solid #ececec;
+    height: 34px;
+    border-radius: 2px;
+    font-weight:500;
+}
+.single .widget select::-ms-expand { 
+    display: none;
+}
+
+@media screen and (min-width:0\0) {
+    .single .widget select {
+        background:none\9;
+        padding: 5px\9;
+    } 
+}
+.single .entry-meta {
+    font-size: .9em;
+}
+.custom-html-widget img {
+    max-width: 100%;
+    height: auto;
+    padding: 0 0 2vw 0;
+}
+.custom-html-widget h4 {
+    color: $dark-hightlight;
+    font-weight: 600;
+}
+.custom-html-widget ul {
+    padding:0;
+}
+.custom-html-widget li {
+    display:inline-block;
+}
+.custom-html-widget .fa {
+    font-size: 1.25em;
+    padding: 1px;
+}
+.entry-content img.alignleft{
+    padding:10px 15px 10px 0;
+}
+.entry-content blockquote {
+    padding: 20px 0 5px;
+    margin: 22px 0;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    font-style: italic;
+    font-weight: 600;
+}
+.entry-content h4 {
+    font-size: 1.5rem;
+    padding: 1.5vw 0 .5vw 0;
+    line-height: 1.3;
+}
+.entry-content strong {
+    font-weight:600;
+}

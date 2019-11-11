@@ -1,5 +1,5 @@
 
-<a href="#" class="btn btn-primary btn-sm navigation-tab animated fadeIn">Our Work Menu</a>
+<a href="#" class="btn btn-primary btn-sm navigation-tab animated fadeIn">Work Menu</a>
 <div class="container-fluid portfolio-navigation-overlay opaque-hide">
 
 	<div class="portfolio-navigation-lead">

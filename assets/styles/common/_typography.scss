@@ -30,9 +30,15 @@ h1 {
 	font-weight: 800!important;
 	text-transform:uppercase!important;
 }
+.single h1 {
+	font-size: 5em;
+	color: #000D1D;
+	padding: 2vw 0;
+}
 h2 {
-	color:#efecca!important;
-	font-size:4.5em;
+	font-size: 3em;
+	color: $dark-hightlight;
+	font-weight: 600;
 }
 h3 {
 	font-size:2.2em;
@@ -62,11 +68,8 @@ h5 {
 #portfolio-listing,
 #instagram-listing {
 	h3 {
-		font-size: 4em;
-		padding-bottom: 5px!important;
 
 		@media (max-width:$medium) {
-			font-size: 3em;
 			
 		}
 		@media (max-width:380px) {
@@ -96,36 +99,4 @@ h5 {
 	h5 {
     	line-height: 1.3!important;
 	}
-}
-
-//Blog Styles
-
-h2.entry-title,
-h2.entry-title a {
-	color:$dark-hightlight;
-	transition: all .25s ease-in;
-	text-align: left!important;
-    padding-bottom: 20px!important;
-    padding-top: 10px!important;
-    font-weight: 500!important;
-	line-height: 1.13!important;
-	
-	&:hover {
-		opacity: 0.8;
-	}
-
-}
-h2.entry-title {
-
-	&:after {
-		content: "";
-	    display: block;
-	    width: 75px;
-	    margin-top: 15px;
-	    margin-bottom: 5px;
-	    height: 8px;
-	    background: #a4ba2b;
-	    text-align:center;
-	}
-
 }

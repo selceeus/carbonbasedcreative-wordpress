@@ -142,7 +142,7 @@
 
           //wp-json/wp/v2/pages?parent=63&per_page=50
 
-          var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50",
+          var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=20&order=asc",
           loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading-portfolio-navigation gallery-pulse">Loading Portfolio</span></div>',
           loadSpinSelector = $('.load-spin');
 
@@ -164,8 +164,8 @@
             
             //Portfolio nav overlay
             if ( $('.portfolio-navigation-overlay').hasClass('active') ) {
-              $('.portfolio-navigation-overlay').removeClass('active');
-              $('.portfolio-navigation-overlay').addClass('animated fadeOutUp');
+              $('.portfolio-navigation-overlay').removeClass('active fadeIn');
+              $('.portfolio-navigation-overlay').fadeOut('fast').addClass('animated fadeOut');
 
               //Check scroll height and Add header background
               if ($(document).scrollTop() >= 50) {
@@ -176,8 +176,8 @@
               }
             }
             else {
-              $('.portfolio-navigation-overlay').removeClass('fadeOutUp');
-              $('.portfolio-navigation-overlay').fadeIn().addClass('active animated fadeInDown');
+              $('.portfolio-navigation-overlay').removeClass('fadeOut');
+              $('.portfolio-navigation-overlay').fadeIn('fast').addClass('active animated fadeIn');
 
               //Remove header background
               headerBkg.removeClass('active');
@@ -198,16 +198,13 @@
                       $('.load-spin').fadeOut('fast');
 
                       $.each( portfolio , function( index, portfolioListing ) {
-                        var portfolioBuild = '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">';
-                        portfolioBuild += '<div class="card opaque-hide">';
+                        var portfolioBuild = '<div class="card opaque-hide">';
                         portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                         portfolioBuild += '<div class="card-block">';
                         portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
                         portfolioBuild += '</div>';
-                        portfolioBuild += '<div class="img-cover"></div>';
                         portfolioBuild += '<div class="img-blur" style="background-image:url(' + portfolioListing.better_featured_image.source_url + ')!important; background-size:cover!important; background-position:center center;"></div>';
                         portfolioBuild += '</a>';
-                        portfolioBuild += '</div>';
                         portfolioBuild += '</div>';
 
                         $('.portfolio-navigation').append(portfolioBuild);
@@ -316,9 +313,15 @@
           });
         }
 
+        $(".scroll").on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $("#start").offset().top-150
+          }, 1000);
+        });
+
       },
       finalize: function() {
-        
 
       }
     },

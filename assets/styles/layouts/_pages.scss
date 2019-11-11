@@ -7,9 +7,10 @@
 		font-family: $headline;	
 	}
 	h1 {
-		font-size:7em!important;
-		font-weight:200!important;
-		color:#a4ba2b!important;
+		font-size:6.5em!important;
+		font-weight:800!important;
+		color:$dark-hightlight!important;
+		text-shadow: 1px 1px 5px rgba(0,0,0,.3);
 
 		@media (max-width:$xsmall) {
 			font-size:4.25em!important;
@@ -26,22 +27,18 @@
 		}
 	}
 	h3 {
-		font-size: 1.65em;
-    	line-height: 1.2!important;
-		color:#efecca!important;
-		font-weight:200!important;
-		padding-bottom: 30px!important;
+		font-size: 1.5em;
+		line-height: 1.3!important;
+		color: #fff!important;
+		font-weight: 400!important;
+		padding-bottom: 45px!important;
 
 		@media (max-width:$xsmall) {
 			font-size:1.45em!important;
 			width: 90%;
 		}
-
 	}
 	@media (min-width:$medium) {
-		padding-left:5%!important;
-	}
-	@media (max-width:$medium) {
 		padding-left:5%!important;
 	}
 }
@@ -61,7 +58,8 @@
 	-webkit-animation: heartpulse 3s infinite;
 	transform-origin: center center;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		opacity:.7;
 	}
 
@@ -97,7 +95,8 @@
 	figure {
 		transition: all .25s ease-in;
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			opacity:.7;
 			transform: scale(1.1);
 		}
@@ -151,7 +150,8 @@
     	padding-bottom: 3px;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		.first-element,
 		.second-element,
 		.third-element,
@@ -214,7 +214,14 @@
 	transform-style: preserve-3d;
 	overflow:hidden;
 
-	&:hover {
+	@media (max-width:769px) {
+		width: 40vw;
+		height: 40vw;
+		margin: 0 2vw 5vw;
+	}
+
+	&:hover,
+	&:focus {
 		box-shadow: 0 3px 47px rgba(0, 0, 0, 0.2)!important;
 		opacity:.85;
 		transform: scale(1.1);
@@ -245,7 +252,7 @@
     	width: 90%;
     	margin: 0 auto!important;
 		position: absolute;
-		bottom:25px;
+		top:35%;
     	z-index:3;
 
     		&.active {
@@ -253,19 +260,26 @@
     		}
 
     		@media (max-width:1024px) {
-				top:60px;
 				opacity:1;
 				padding-left: 4.5%!important;
 			}
+			@media (max-width:800px) {
+				top:14%;
+			}
+			@media (max-width:769px) {
+				top:35%;
+			}
 
 		h4 {
+			font-size:1.2em;
 			color:#ffffff!important;
 			font-weight: 600!important;
+			line-height: 1.1em!important;
 
 			&:after {
 				content: "";
 			    display: block;
-			    width: 60px;
+			    width: 50%;
 			    margin-top: 10px;
 			    margin-bottom: 5px;
 			    height: 5px;
@@ -302,7 +316,8 @@
     z-index: 2;
     opacity:.3;
 
-    &:hover {
+    &:hover,
+	&:focus {
 		-webkit-filter: blur(2px);
 		-moz-filter: blur(2px);
 		-o-filter: blur(2px);
@@ -319,28 +334,28 @@
 }
 
 //Portfolio Navigation
-
 .navigation-tab {
-	width:180px;
-	position: fixed;
-    z-index: 300;
-    bottom: 0;
-    font-weight: 300;
-    color: $brand-primary;
-    border-radius: 0;
+	transition: all, .25s, ease-in;
+	width: 100%;
+    position: fixed;
+	z-index: 300;
+	bottom:0;
+    font-weight: 800;
+    color: #fff;
+    border-radius: 2px !important;
     border: none;
-    left:0;
-    right:0;
-    margin:auto;
+    margin: auto;
+	padding: 10px!important;
 
-    &:hover {
-    	color:$brand-primary;
-    	opacity:.2;
+	&:hover,
+	&:focus {
+		color:#fff;
+    	opacity:.8;
     }
 
     &.active {
-    	color:#efecca!important;
-    	background-color: transparent!important;
+    	color:#fff!important;
+    	background-color: $green!important;
     }
 }
 
@@ -352,10 +367,11 @@
 	width: 100%;
 	display:none;
 	z-index: 100;
-	
+	top:0;
+
 	&.active {
 		display:block;
-		background-color: rgba($brand-primary, .98);
+		background-color: rgba($dark-hightlight, .98);
 		top:0;
 
 		@media (max-width:991px) {
@@ -376,7 +392,10 @@
 
 		h3 {
 			color:#a4ba2b;
+			font-size: 3em;
 			padding-bottom: 10px;
+			font-weight: 800;
+			text-transform: uppercase;
 			
 			&:after {
 				content: "";
@@ -393,12 +412,17 @@
 			color:#efecca;
 		}
 	}
-	
 }
 
 .portfolio-navigation {
 	position: relative;
 	margin:0 auto;
+	display: flex;
+	justify-content: center;
+
+	@media (max-width:$medium) {
+		flex-direction: row;
+	}
 
 	div {
 		margin:0;
@@ -407,18 +431,27 @@
 
 	.card {
 	    border: none;
-	    border-radius: 0;
-	    height:250px;
-	    background:#a4ba2b!important;
+	    border-radius: 50%;
+		background:#a4ba2b!important;
+		width: 20vw;
+		height: 20vw;
+		margin: 0px 1vw 2vw;
 
 	    @media (max-width:$medium) {
-			height:180px;
+			width: 40vw;
+			height: 40vw;
+			margin: 0 2vw 5vw;
+		}
+		@media (max-width:$xsmall) {
+			width: 60vw;
+			height: 60vw;
 		}
 
 	    &-block {
 
 	    	h4 {
-	    		font-size: 1.25rem;
+				font-size: 1.25rem;
+				text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 
 	    		@media (max-width:$medium) {
 					font-size: 1.05rem;
@@ -431,7 +464,7 @@
 				    margin-top: 10px;
 				    margin-bottom: 5px;
 				    height: 5px;
-				    background: #044252;
+				    background: $dark-hightlight;
 				    text-align:center;
 				}
 
@@ -447,12 +480,8 @@
 //404 Error Page
 
 .error {
-	background-image: url(/wp-content/themes/carbonbased-new/dist/images/cbc-error-bkg.png);
-    background-size: cover;
-    background-position: center;
     padding-top: 25%;
     text-align: center;
-    height: 100vh;
     @media (max-width:$small) {
 		padding-top: 45%;
 	}
