@@ -34,6 +34,9 @@ h1 {
 	@media (max-width:$xsmall) {
 		font-size: 4em!important;
 	}
+	@media (max-width:320px) {
+		font-size: 3em!important;
+	}
 }
 .contact h1 {
 	@media (max-width:$xsmall) {
@@ -55,7 +58,10 @@ h2 {
 	}
 }
 .leadtext h2 {
-	font-size: 32px!important;
+
+	@media (max-width:$xsmall) {
+		font-size: 32px!important;
+	}
 
 	@media (max-width:320px) {
 		font-size: 28px!important;
@@ -80,6 +86,12 @@ h3 {
 h4 {
 	@media (max-width:$xsmall) {
 		font-size: 30px!important;
+	}
+}
+.page-template-template-portfolio h4,
+.work h4 {
+	@media (max-width:$xsmall) {
+		font-size: 1.8em!important;
 	}
 }
 h5 {

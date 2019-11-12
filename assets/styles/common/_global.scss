@@ -169,6 +169,11 @@ body {
 .modal .email-checkbox {
     height: inherit;
 }
+li#field_1_3 {
+	@media(max-width: $xsmall) {
+		margin-top: 20px;
+	}
+}
 
 //Utility Classes
 
