@@ -299,7 +299,7 @@
           });
         }
 
-        if ( $(window).width() > 640 ) {
+        if ( $(window).width() > 768) {
           var rellax = new Rellax('.rellax', {
             speed: -1,
             center: false,
@@ -313,7 +313,7 @@
         $(".scroll").on('click', function(e) {
           e.preventDefault();
           $('html, body').animate({
-            scrollTop: $("#start").offset().top-150
+            scrollTop: $("#start").offset().top-100
           }, 1000);
         });
 
@@ -326,7 +326,7 @@
     'about': {
       init: function() {
 
-        if ( $(window).width() > 640 ) {
+        if ( $(window).width() > 768 ) {
           var rellax = new Rellax('.rellax', {
             speed: -1,
             center: false,
@@ -352,7 +352,7 @@
     },
     'solutions': {
       init: function() {
-        if ( $(window).width() > 640 ) {
+        if ( $(window).width() > 768 ) {
           var rellax = new Rellax('.rellax', {
             speed: -1,
             center: false,
@@ -462,7 +462,7 @@
           }
         });
 
-        if ( $(window).width() > 640 ) {
+        if ( $(window).width() > 768 ) {
           $( document ).ajaxComplete(function( event, request, settings ) {
             var rellax = new Rellax('.rellax', {
               speed: 1,
