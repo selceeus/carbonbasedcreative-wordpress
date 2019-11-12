@@ -13,10 +13,10 @@
 		text-shadow: 1px 1px 5px rgba(0,0,0,.3);
 
 		@media (max-width:$xsmall) {
-			font-size:4.25em!important;
+			font-size: 3.5em!important;
 		}
 		@media (max-width:320px) {
-			font-size:3.5em!important;
+			font-size:2.6em!important;
 		}
 
 		.fx span:nth-child(3) {
@@ -443,8 +443,8 @@
 			margin: 0 2vw 5vw;
 		}
 		@media (max-width:$xsmall) {
-			width: 60vw;
-			height: 60vw;
+			width: 80vw;
+			height: 80vw;
 		}
 
 	    &-block {

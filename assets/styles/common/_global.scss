@@ -50,7 +50,7 @@ body {
 
 		@media (max-width:$small) {
 			width: 50%;
-    		margin: 32% 25%;
+    		margin: 28vh auto;
     	}
     }
 }
@@ -182,12 +182,13 @@ body {
     /* width: 80%; */
     /* height: 40%; */
     /* min-width: 310px; */
-    max-width: 630px;
+    max-width: 41vw;
     /* padding: 20px; */
     /* z-index: 5000; */
 
 	@media (max-width:$small) {
 		margin-left: 8vw;
+		max-width: 80vw;
 	}
 	@media (max-width:320px) {
 
@@ -245,7 +246,11 @@ textarea#input_1_3,
 }
 .gform_wrapper form li, 
 .gform_wrapper li {
-    padding: 15px 0!important;
+	padding: 15px 0!important;
+
+	@media (max-width:$xsmall) {
+		padding: 0 0!important;
+	}
 }
 
 div.ginput_complex.ginput_container.gf_name_has_2 span:first-child, 
@@ -416,7 +421,11 @@ span.name_first {
     opacity: 0.55;
 }
 .et_monarch .et_social_networks {
-    width: 280px!important;
+	width: 280px!important;
+	
+	@media (max-width:320px) {
+		margin-left: -34px;
+	}
 }
 .fx{
 	display: inline;
