@@ -39,12 +39,22 @@ h2 {
 	font-size: 3em;
 	color: $dark-hightlight;
 	font-weight: 600;
+
+	@media (max-width:$xsmall) {
+		font-size: 40px!important;
+	}
 }
 h3 {
 	font-size:2.2em;
+
+	@media (max-width:$xsmall) {
+		font-size: 36px!important;
+	}
 }
 h4 {
-
+	@media (max-width:$xsmall) {
+		font-size: 30px!important;
+	}
 }
 h5 {
 	font-size:1.2rem;

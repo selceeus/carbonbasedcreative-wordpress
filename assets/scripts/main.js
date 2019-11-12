@@ -270,7 +270,6 @@
         leadTextElements = $('.home-lead-text').children(),
         headerAnimationClasses = "animated fadeInDown",
         reverseAnimationClasses = "animated fadeOutUp",
-        scrollArrow = $('.scroll-arrow'),
         timeOut = 650;
 
         function headerAnimationIterator() {
@@ -284,20 +283,18 @@
         //First Animation
         if ($(window).width() > 640) {
           leadText.fadeIn().addClass( headerAnimationClasses );
-          scrollArrow.fadeIn();
 
           headerAnimationIterator();
 
           $(document).scroll(function() {
             if ($(document).scrollTop() > 50) {
               leadText.removeClass( headerAnimationClasses );
-              leadText.fadeOut('slow');
-              scrollArrow.fadeOut('slow');
+              leadText.addClass( reverseAnimationClasses ).fadeOut('slow');
             }
             else {
+              leadText.removeClass( reverseAnimationClasses );
               headerAnimationIterator();
               leadText.fadeIn().addClass( headerAnimationClasses );
-              scrollArrow.fadeIn();
             }
           });
         }

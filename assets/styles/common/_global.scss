@@ -175,7 +175,7 @@ body {
 .absolute-center {
 	/*position: absolute;*/
 	margin-top: 10vw;
-	margin-left: 7vw;
+	margin-left: 2vw;
     /*left: 0%;*/
     /* bottom: 0; */
     /* right: 0; */
@@ -186,8 +186,8 @@ body {
     /* padding: 20px; */
     /* z-index: 5000; */
 
-	@media (max-width:$medium) {
-
+	@media (max-width:$small) {
+		margin-left: 8vw;
 	}
 	@media (max-width:320px) {
 
