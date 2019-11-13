@@ -342,7 +342,7 @@
 	bottom:0;
     font-weight: 800;
     color: #fff;
-    border-radius: 2px !important;
+	border-radius: 0!important;
     border: none;
     margin: auto;
 	padding: 10px!important;
@@ -356,7 +356,10 @@
     &.active {
     	color:#fff!important;
     	background-color: $green!important;
-    }
+	}
+	i.fa.fa-bars {
+		margin-right: 6px;
+	}
 }
 
 .portfolio-navigation-overlay {
