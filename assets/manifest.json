@@ -28,6 +28,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost:8888/carbonbased-new"
+    "devUrl": "https://carbonbased-local.test"
   }
 }

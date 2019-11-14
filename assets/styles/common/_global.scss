@@ -192,7 +192,7 @@ li#field_1_3 {
     /* z-index: 5000; */
 
 	@media (max-width:$small) {
-		margin-left: 8vw;
+		margin-left: 8vw!important;
 		max-width: 80vw;
 	}
 	@media (max-width:320px) {
