@@ -19,7 +19,7 @@
 			</div>
 		  </div>
 		  <div class="row">
-			<div class="col text-center pt-5">
+			<div class="col text-center pt-3">
 				<?php 
 					if ( !empty( the_field( "menu_contact_information", 'option' )) ):
 						the_field( "menu_contact_information", 'option' );
