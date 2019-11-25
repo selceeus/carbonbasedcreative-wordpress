@@ -142,7 +142,7 @@
 
           //wp-json/wp/v2/pages?parent=63&per_page=50
 
-          var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=20&order=asc",
+          var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc",
           loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading-portfolio-navigation gallery-pulse">Loading Portfolio</span></div>',
           loadSpinSelector = $('.load-spin');
 
@@ -388,7 +388,7 @@
         }
 
         // Get Events - /wp-json/wp/v2/pages?parent=63
-		    var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=20&order=asc",
+		    var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc",
 		    loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>',
         loadSpinSelector = $('.load-spin');
         
@@ -465,7 +465,7 @@
         if ( $(window).width() > 768 ) {
           $( document ).ajaxComplete(function( event, request, settings ) {
             var rellax = new Rellax('.rellax', {
-              speed: 1,
+              speed: -1,
               center: false,
               wrapper: null,
               round: true,
