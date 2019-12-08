@@ -387,7 +387,11 @@
           return Math.floor(Math.random() * Math.floor(max));
         }
 
-        // Get Events - /wp-json/wp/v2/pages?parent=63
+        // Get Portfolio Pages - /wp-json/wp/v2/pages?parent=63
+        // Get Portfolio Page by Category Design - /wp-json/wp/v2/pages?parent=63&work_category=52
+        // Get Portfolio Page by Category Illustration - /wp-json/wp/v2/pages?parent=63&work_category=53
+        // Get Portfolio Page by Category Development - /wp-json/wp/v2/pages?parent=63&work_category=54
+
 		    var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc",
 		    loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>',
         loadSpinSelector = $('.load-spin');
@@ -407,13 +411,7 @@
             $.each( portShuffle , function( index, portfolioListing ) {
 
                 portfolioBuild = '<div class="portfolio-item">';
-
-                if( index % getRandomInt(4) ) {
-                  portfolioBuild += '<div class="card opaque-hide rellax" >';
-                } else {
-                  portfolioBuild += '<div class="card opaque-hide" >';
-                }
-
+                portfolioBuild += '<div class="card opaque-hide" >';
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                 portfolioBuild += '<div class="card-block">';
                 portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
@@ -461,20 +459,6 @@
             console.log( 'something went wrong', status, err );
           }
         });
-
-        if ( $(window).width() > 768 ) {
-          $( document ).ajaxComplete(function( event, request, settings ) {
-            var rellax = new Rellax('.rellax', {
-              speed: -1,
-              center: false,
-              wrapper: null,
-              round: true,
-              vertical: true,
-              horizontal: false
-            });
-          });
-        }
-
 	    }
     }
   };

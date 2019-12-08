@@ -107,7 +107,6 @@ function dequeue_woocommerce_styles_scripts() {
 //ACF Option Pages
 
 if( function_exists('acf_add_options_page') ) {
-	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme Options',
 		'menu_title'	=> 'Theme Options',
@@ -115,17 +114,14 @@ if( function_exists('acf_add_options_page') ) {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Menu Options',
 		'menu_title'	=> 'Menu Options',
 		'parent_slug'	=> 'theme-options-settings',
 	));
-
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Portfolio Menu Options',
-        'menu_title'    => 'Portfolio Menu Options',
-        'parent_slug'   => 'theme-options-settings',
-    ));
-	
+  acf_add_options_sub_page(array(
+      'page_title'    => 'Portfolio Menu Options',
+      'menu_title'    => 'Portfolio Menu Options',
+      'parent_slug'   => 'theme-options-settings',
+  ));
 }
