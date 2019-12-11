@@ -41,38 +41,6 @@ function get_all_posts( $data, $post, $context ) {
 }
 add_filter( 'rest_prepare_post', 'get_all_posts', 10, 3 );
 
-//Add Categories to pages
-function add_taxonomies_cats_to_pages() {
-  $labels = array(
-		'name'              => _x( 'Work Category', 'Work Category', 'textdomain' ),
-		'singular_name'     => _x( 'Work Category', 'Work Category', 'textdomain' ),
-		'search_items'      => __( 'Search Work Category', 'textdomain' ),
-		'all_items'         => __( 'All Work Category', 'textdomain' ),
-		'parent_item'       => __( 'Parent Work Category', 'textdomain' ),
-		'parent_item_colon' => __( 'Parent Work Category:', 'textdomain' ),
-		'edit_item'         => __( 'Edit Work Category', 'textdomain' ),
-		'update_item'       => __( 'Update Work Category', 'textdomain' ),
-		'add_new_item'      => __( 'Add New Work Category', 'textdomain' ),
-		'new_item_name'     => __( 'New Genre Work Category', 'textdomain' ),
-		'menu_name'         => __( 'Work Category', 'textdomain' ),
-	);
-
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-    'show_admin_column' => true,
-    'show_in_rest'      => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'work_category' ),
-  );
-  
-  register_taxonomy( 'work_category','page', $args );
-  register_taxonomy_for_object_type( 'work_category', 'page' );
-
-}
- add_action( 'init', 'add_taxonomies_cats_to_pages' );
-
 // Build Alexa Flash Brief Feed
 function build_alexa_feed( $post_id ) {
 
