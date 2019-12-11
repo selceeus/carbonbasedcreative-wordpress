@@ -319,7 +319,6 @@
 
       },
       finalize: function() {
-
       }
     },
     // About us page, note the change from about-us to about_us.
@@ -346,8 +345,6 @@
 
       },
       finalize: function() {
-        
-
       }
     },
     'solutions': {
@@ -392,9 +389,31 @@
         // Get Portfolio Page by Category Illustration - /wp-json/wp/v2/pages?parent=63&work_category=53
         // Get Portfolio Page by Category Development - /wp-json/wp/v2/pages?parent=63&work_category=54
 
-		    var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc",
-		    loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>',
-        loadSpinSelector = $('.load-spin');
+        var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc";
+
+        var filterButton = $('.btn-filter');
+
+        filterButton.each(function(i, obj) {
+          $('.btn-filter:eq('+ i +')').on('click', function(){
+            switch( i ) {
+              case 0:
+                location.reload();
+                urlTarget = "/wp-json/wp/v2/pages?parent=63&work_category=52&per_page=50&order=asc";
+                break;
+              case 1:
+                location.reload();
+                urlTarget = "/wp-json/wp/v2/pages?parent=63&work_category=54&per_page=50&order=asc";
+                break;
+              case 2:
+                location.reload();
+                urlTarget = "/wp-json/wp/v2/pages?parent=63&work_category=53&per_page=50&order=asc";
+                break;
+            }
+          });
+        });
+
+		    var loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>';
+        var loadSpinSelector = $('.load-spin');
         
         //Parse portfolio elements
         $.ajax( urlTarget, {
@@ -409,7 +428,6 @@
             $('.load-spin').fadeOut('fast');
 
             $.each( portShuffle , function( index, portfolioListing ) {
-
                 portfolioBuild = '<div class="portfolio-item">';
                 portfolioBuild += '<div class="card opaque-hide" >';
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
@@ -429,36 +447,37 @@
                   }, i * 120);
                 });
             });
-
-            if ( $(window).width() > 640 ) {
-              $('.card').on({ 
-                mouseenter: function(){
-                  $(this).find('.card-block').addClass('active');
-                  $(this).find('.img-cover').addClass('gallery-pulse');
-                  $(this).find('.img-blur').addClass('blur');
-                },
-                mouseleave: function(){
-                  $(this).find('.card-block').removeClass('active');
-                  $(this).find('.img-cover').removeClass('gallery-pulse');
-                  $(this).find('.img-blur').removeClass('blur');
-                },
-                touchstart: function(){
-                  $(this).find('.card-block').addClass('active');
-                  $(this).find('.img-cover').addClass('gallery-pulse');
-                  $(this).find('.img-blur').addClass('blur');
-                },
-                  touchend: function(){
-                  $(this).find('.card-block').removeClass('active');
-                  $(this).find('.img-cover').removeClass('gallery-pulse');
-                  $(this).find('.img-blur').removeClass('blur');
-                }
-              });
-            }
           },
           error: function( req, status, err ) {
             console.log( 'something went wrong', status, err );
           }
         });
+
+        if ( $(window).width() > 640 ) {
+          $('.card').on({ 
+            mouseenter: function(){
+              $(this).find('.card-block').addClass('active');
+              $(this).find('.img-cover').addClass('gallery-pulse');
+              $(this).find('.img-blur').addClass('blur');
+            },
+            mouseleave: function(){
+              $(this).find('.card-block').removeClass('active');
+              $(this).find('.img-cover').removeClass('gallery-pulse');
+              $(this).find('.img-blur').removeClass('blur');
+            },
+            touchstart: function(){
+              $(this).find('.card-block').addClass('active');
+              $(this).find('.img-cover').addClass('gallery-pulse');
+              $(this).find('.img-blur').addClass('blur');
+            },
+            touchend: function(){
+              $(this).find('.card-block').removeClass('active');
+              $(this).find('.img-cover').removeClass('gallery-pulse');
+              $(this).find('.img-blur').removeClass('blur');
+            }
+          });
+        }
+
 	    }
     }
   };
