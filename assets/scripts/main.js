@@ -390,24 +390,21 @@
         // Get Portfolio Page by Category Development - /wp-json/wp/v2/pages?parent=63&work_category=54
 
         var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc";
-
         var filterButton = $('.btn-filter');
-
         filterButton.each(function(i, obj) {
           $('.btn-filter:eq('+ i +')').on('click', function(){
-            switch( i ) {
-              case 0:
-                location.reload();
-                urlTarget = "/wp-json/wp/v2/pages?parent=63&work_category=52&per_page=50&order=asc";
-                break;
-              case 1:
-                location.reload();
-                urlTarget = "/wp-json/wp/v2/pages?parent=63&work_category=54&per_page=50&order=asc";
-                break;
-              case 2:
-                location.reload();
-                urlTarget = "/wp-json/wp/v2/pages?parent=63&work_category=53&per_page=50&order=asc";
-                break;
+
+            if( i === 0) {
+              //design - 52
+              console.log($('.portfolio-item').attr('data-category'));
+            }
+            else if( i === 1) {
+              //development - 54
+              console.log($('.portfolio-item').attr('data-category'));
+            }
+            else {
+              //illustration - 53
+              console.log($('.portfolio-item').attr('data-category'));
             }
           });
         });
@@ -427,8 +424,10 @@
             var portShuffle = shuffle(portfolio);
             $('.load-spin').fadeOut('fast');
 
-            $.each( portShuffle , function( index, portfolioListing ) {
-                portfolioBuild = '<div class="portfolio-item">';
+            console.log(portfolio);
+
+            $.each( portShuffle, function( index, portfolioListing ) {
+                portfolioBuild = '<div class="portfolio-item" data-category="' + portfolioListing.work_category + '">';
                 portfolioBuild += '<div class="card opaque-hide" >';
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                 portfolioBuild += '<div class="card-block">';
