@@ -391,12 +391,19 @@
 
         var urlTarget = "/wp-json/wp/v2/pages?parent=63&per_page=50&order=asc";
         var filterButton = $('.btn-filter');
-        filterButton.each(function(i, obj) {
-          $('.btn-filter:eq('+ i +')').on('click', function(){
 
+        filterButton.each(function(i, obj) {
+
+          $('.btn-filter:eq('+ i +')').on('click', function(){
             if( i === 0) {
-              //design - 52
-              console.log($('.portfolio-item').attr('data-category'));
+
+              $('.portfolio-item').each( function(d, obj) {
+                if($('.portfolio-item:eq('+ d +')[data-category=52]')){
+                  console.log('true');
+                  //$('.portfolio-item:eq('+ d +')').addClass('hello');
+                }
+              });
+
             }
             else if( i === 1) {
               //development - 54
@@ -410,8 +417,7 @@
         });
 
 		    var loadSpinContainer = '<div class="load-spin"> <i class="fa fa-cog fa-spin fa-3x fa-fw"></i> <span class="loading gallery-pulse">Loading Portfolio</span></div>';
-        var loadSpinSelector = $('.load-spin');
-        
+
         //Parse portfolio elements
         $.ajax( urlTarget, {
           type: 'GET',
@@ -425,8 +431,8 @@
             $('.load-spin').fadeOut('fast');
 
             $.each( portShuffle, function( index, portfolioListing ) {
-                portfolioBuild = '<div class="portfolio-item" data-category="' + portfolioListing.work_category[index] + '">';
-                portfolioBuild = '<div class="card opaque-hide" >';
+                portfolioBuild = '<div class="portfolio-item" data-category="' + portfolioListing.work_category.join(' ') + '">';
+                portfolioBuild += '<div class="card opaque-hide" >';
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                 portfolioBuild += '<div class="card-block">';
                 portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
