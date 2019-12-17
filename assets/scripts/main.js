@@ -424,11 +424,9 @@
             var portShuffle = shuffle(portfolio);
             $('.load-spin').fadeOut('fast');
 
-            console.log(portfolio);
-
             $.each( portShuffle, function( index, portfolioListing ) {
-                portfolioBuild = '<div class="portfolio-item" data-category="' + portfolioListing.work_category + '">';
-                portfolioBuild += '<div class="card opaque-hide" >';
+                portfolioBuild = '<div class="portfolio-item" data-category="' + portfolioListing.work_category[index] + '">';
+                portfolioBuild = '<div class="card opaque-hide" >';
                 portfolioBuild += '<a href=" ' + portfolioListing.link + ' ">';
                 portfolioBuild += '<div class="card-block">';
                 portfolioBuild += '<h4 class="card-title">' + portfolioListing.title.rendered + '</h4>';
