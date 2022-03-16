@@ -1,7 +1,7 @@
 # Carbonbased Creative Theme 2020
 
-Updates to current theme and continued development.
+Custom Wordpress Theme for CarbonbasedCreative.com.
 
-Built on Roots Sage.
+Built on Roots Sage Theme.
 
 carbonbasedcreative.com
