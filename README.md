@@ -1,4 +1,4 @@
-# Carbonbased Creative Theme 2020
+# Carbonbased Creative Theme
 
 Custom Wordpress Theme for CarbonbasedCreative.com.
 
